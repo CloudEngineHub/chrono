@@ -89,8 +89,8 @@ class ChApi CompositeInertia {
     const ChMatrix33<>& GetInertiaReference() const { return m_inertia; }
 
     /// Include sub-component inertia properties.
-    /// Update the inertia properties of the composite object with the specified mass and inertia of a sub-component. A sub-component is
-    void AddComponent(const ChFrame<>& frame,       ///< centroidal frame of sub-component (relative to reference frame)
+    /// Update the inertia properties of the composite object with the specified mass and inertia of a sub-component.
+    void AddComponent(const ChFrame<>& frame,       ///< centroidal frame of sub-component (relative to the composite reference frame)
                       double mass,                  ///< mass of sub-component
                       const ChMatrix33<>& inertia,  ///< sub-component inertia tensor w.r.t. its centroidal frame
                       bool is_void = false          ///< indicate if sub-component represents a material void
