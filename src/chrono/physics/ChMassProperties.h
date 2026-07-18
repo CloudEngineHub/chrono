@@ -48,13 +48,17 @@ class ChApi ChInertiaUtils {
                                    double& totmass,
                                    ChVector3d& barycenter);
 
-    /// Rotate an inertia tensor, given a rotation matrix R
+    /// Rotate an inertia tensor, given a rotation matrix R.
     static void RotateInertia(const ChMatrix33<> inertiaIn, const ChMatrix33<> R, ChMatrix33<>& inertiaOut);
 
-    /// Translate an inertia tensor to a non-barycentric reference,
-    /// given a displacement 'dist', using the Huygens-Steiner
-    /// parallel axis theorem.
+    /// Rotate an inertia tensor, given a rotation matrix R.
+    static ChMatrix33<> RotateInertia(const ChMatrix33<> inertiaIn, const ChMatrix33<> R);
+
+    /// Translate an inertia tensor to a non-barycentric reference, given a displacement 'dist', using the Huygens-Steiner parallel axis theorem.
     static void TranslateInertia(const ChMatrix33<> inertiaIn, const ChVector3d dist, const double mass, ChMatrix33<>& inertiaOut);
+
+    /// Translate an inertia tensor to a non-barycentric reference, given a displacement 'dist', using the Huygens-Steiner parallel axis theorem.
+    static ChMatrix33<> TranslateInertia(const ChMatrix33<> inertiaIn, const ChVector3d dist, const double mass);
 
     /// Compute principal moments of inertia and the principal axes.
     /// The principal moments of inertia are sorted in ascending order.
