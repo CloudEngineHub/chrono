@@ -30,7 +30,7 @@ class ViperRigWheel : public chrono::vehicle::ChWheelTestRig::WheelAssembly {
     virtual double GetMass() const override { return m_mass; }
     virtual std::shared_ptr<chrono::ChBody> GetHub() const override { return m_wheel; }
 
-    virtual void Initialize(const ChFramed& frame, bool fixed, double step_size, VisualizationType vis_type) override {
+    virtual void Initialize(const chrono::ChFramed& frame, bool fixed, double step_size, chrono::VisualizationType vis_type) override {
         m_wheel->SetPos(frame.GetPos());
         m_wheel->SetRot(frame.GetRot());
         m_wheel->SetFixed(fixed);
